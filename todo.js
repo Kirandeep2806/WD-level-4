@@ -45,7 +45,7 @@ const todoList = () => {
       .map(
         (item) =>
           `${item.completed ? "[x] " : "[ ] "}${item.title} ${
-            item.dueDate === today ? " " : item.dueDate
+            item.dueDate === currDay ? " " : item.dueDate
           }`
       )
       .join("\n");
@@ -61,17 +61,17 @@ const todoList = () => {
   
   const todos = todoList();
   
-  const formattedDate = d => {
-    return d.toISOString().split("T")[0]
+  const formattedDate = date => {
+    return date.toISOString().split("T")[0]
   }
   
-  var dateToday = new Date()
-  const today = formattedDate(dateToday)
-  const yesterday = formattedDate(
-    new Date(new Date().setDate(dateToday.getDate() - 1))
+  var todaysDate = new Date()
+  const currDay = formattedDate(todaysDate)
+  const previousDay = formattedDate(
+    new Date(new Date().setDate(todaysDate.getDate() - 1))
   )
   const tomorrow = formattedDate(
-    new Date(new Date().setDate(dateToday.getDate() + 1))
+    new Date(new Date().setDate(todaysDate.getDate() + 1))
   )
   
  module.exports=todoList;
