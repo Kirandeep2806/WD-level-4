@@ -55,9 +55,7 @@ const todoList = () => {
     return { all, add, markAsComplete, overdue, dueToday, dueLater, toDisplayableList };
   }
   
-  // ####################################### #
-  // DO NOT CHANGE ANYTHING BELOW THIS LINE. #
-  // ####################################### #
+
   
   const todos = todoList();
   
@@ -70,7 +68,7 @@ const todoList = () => {
   const previousDay = formattedDate(
     new Date(new Date().setDate(todaysDate.getDate() - 1))
   )
-  const tomorrow = formattedDate(
+  const nextDay = formattedDate(
     new Date(new Date().setDate(todaysDate.getDate() + 1))
   )
   

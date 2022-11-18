@@ -14,7 +14,7 @@
       "prettier --write ."
     ]
   },
-  "author": "",
+  "author": "Kiran Deep",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.25.0",
